@@ -1,0 +1,36 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+body {
+  background-color: #282c32;
+  min-height: 100vh;
+}
+
+#navbarNav ul li a {
+  color: black;
+}
+
+#navbarNav a {
+  color: black;
+}
+
+#content {
+  color: white;
+  padding-top: 15px;
+  width: 75%;
+  position: relative;
+  margin: auto;
+}
+
+.btn {
+  padding: 3px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.btnnavs {
+  box-shadow: 1px 1px 5px black;
+}
+
+nav {
+  box-shadow: 1px 1px 5px #666;
+}
