@@ -1,7 +1,7 @@
 import axios from "axios"
 
-export const fetchProductList = async () => {
-    const { data } = await axios.get("http://localhost:4000/product")
+export const fetchProductList = async ({ pageParam = 0 }) => {
+    const { data } = await axios.get(`http://localhost:4000/product?page=${pageParam}`)
     return data;
 }
 

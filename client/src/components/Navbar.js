@@ -7,7 +7,7 @@ function Navbar() {
         <nav id='navbar' className="navbar navbar-expand-lg" style={{ borderRadius: "0 0 10px 10px", backgroundColor: "#bbb" }}>
             <div className="container-fluid ">
                 <div className='d-flex' id='navbarNav'>
-                    <Link className="navbar-brand" to="/" style={{ color: "#333", fontWeight: "bold" }}>tdagci</Link>
+                    <Link className="navbar-brand" to="/" style={{ color: "#333", fontWeight: "bold" }}>tDagci</Link>
                     <Link className="nav-link" to="/">Products</Link>
                 </div>
 
