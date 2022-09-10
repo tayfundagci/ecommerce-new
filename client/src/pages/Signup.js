@@ -7,10 +7,14 @@ import { useAuth } from '../contexts/AuthContext';
 
 import { ToastContainer, toast } from 'react-toastify';
 
+import { useNavigate } from "react-router-dom";
+
 
 function Signup() {
 
     const { login } = useAuth();
+    let navigate = useNavigate();
+
 
     const formik = useFormik({
         initialValues: { email: "", password: "", passwordConfirm: "" },
@@ -19,6 +23,7 @@ function Signup() {
             try {
                 const registerResponse = await fetchRegister({ email: values.email, password: values.password });
                 login(registerResponse);
+                navigate("/");
                 console.log(registerResponse);
                 toast.success('You have been registered', {
                     position: "top-right",
@@ -63,7 +68,7 @@ function Signup() {
                     <input type="password" className="form-control" placeholder="Confirm Password" name='passwordConfirm' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.passwordConfirm} />
                 </div>
                 <div className="text-center">
-                    <button type="submit" className="btn btn-primary">Sign Up</button>
+                    <button type="submit" className="btn btn-primary" >Sign Up</button>
                 </div>
             </form >
         </div >
