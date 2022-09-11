@@ -16,13 +16,12 @@ function Profile() {
         <>
             <h3 className='text-center mb-4'>Profile</h3>
 
-            <div className="card bg-transparent  m-auto text-center border border-white  align-items-center" style={{ width: "18rem", backgroundColor: "#282c34" }}>
-                <div className="card-body">
+            <div className="m-auto text-center " >
+                <div>
                     {user && (
                         <>
-                            <h5 className="card-title">{user._id}</h5>
                             <h6 className="card-subtitle">{user.email}</h6>
-                            <p className="card-text">{user.role}</p>
+                            <p className="card-text text-muted">{user.role}</p>
                         </>
                     )}
 

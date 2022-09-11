@@ -7,8 +7,10 @@ import Profile from "./pages/Profile";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import ProtectedRouteAdmin from "./pages/ProtectedRouteAdmin";
 import Basket from "./pages/Basket";
 import Error404 from "./pages/Error404";
+import Admin from "./pages/Admin";
 
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
           <Route path="*" element={<Error404 />} />
           <Route element={<ProtectedRoute />} >
             <Route path="/profile" element={<Profile />} />
+          </Route>
+          <Route element={<ProtectedRouteAdmin />} >
+            <Route path="/admin" element={<Admin />} admin={true} />
           </Route>
         </Routes>
       </div>
