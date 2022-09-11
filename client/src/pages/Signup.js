@@ -1,7 +1,7 @@
 import React from 'react'
-import { useFormik } from 'formik';
+import { useFormik, ErrorMessage } from 'formik';
 
-import validationSchema from '../validations';
+import validationSchema from '../registerValidations';
 import { fetchRegister } from '../api';
 import { useAuth } from '../contexts/AuthContext';
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import { useBasket } from '../contexts/BasketContext';
 
 function Navbar() {
 
     const { loggedIn } = useAuth();
+    const { items } = useBasket();
 
     return (
 
@@ -23,13 +25,16 @@ function Navbar() {
                                     <Link className='nav-link' to="/signin"><button className='btn btn-primary btnnavs'>Login</button></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className='nav-link' to="/signup"><button className='btn btn-success btnnavs'>Register</button></Link>
+                                    <Link className='nav-link' to="/signup"><button className='btn btn-primary btnnavs'>Register</button></Link>
                                 </li>
                             </>
                         )}
 
                         {loggedIn && (
                             <>
+                                {items.length > 0 && (
+                                    <Link to="/basket"><button className='btn btn-primary btnnavs'>Basket ({items.length})</button></Link>
+                                )}
                                 <li className="nav-item">
                                     <Link className='nav-link' to="/profile"><button className='btn btn-primary btnnavs'>Profile</button></Link>
                                 </li>

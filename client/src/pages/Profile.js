@@ -16,7 +16,7 @@ function Profile() {
         <>
             <h3 className='text-center mb-4'>Profile</h3>
 
-            <div className="card bg-transparent  m-auto text-center border border-white  align-items-center" style={{ width: "18rem" }}>
+            <div className="card bg-transparent  m-auto text-center border border-white  align-items-center" style={{ width: "18rem", backgroundColor: "#282c34" }}>
                 <div className="card-body">
                     {user && (
                         <>
@@ -27,7 +27,7 @@ function Profile() {
                     )}
 
                     {!user && (
-                        <h5>no user</h5>
+                        <h5>No user</h5>
                     )}
                     <button className='btn btn-primary' onClick={handleLogout}>Logout</button>
                 </div>
