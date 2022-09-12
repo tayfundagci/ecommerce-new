@@ -11,6 +11,8 @@ import ProtectedRouteAdmin from "./pages/ProtectedRouteAdmin";
 import Basket from "./pages/Basket";
 import Error404 from "./pages/Error404";
 import Admin from "./pages/Admin";
+import AdminOrders from "./pages/AdminOrders";
+import AdminProducts from "./pages/AdminProducts";
 
 
 function App() {
@@ -28,8 +30,10 @@ function App() {
           <Route element={<ProtectedRoute />} >
             <Route path="/profile" element={<Profile />} />
           </Route>
-          <Route element={<ProtectedRouteAdmin />} >
-            <Route path="/admin" element={<Admin />} admin={true} />
+          <Route element={<ProtectedRouteAdmin admin={true} />}>
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/adminorders" element={<AdminOrders />} />
+            <Route path="/admin/adminproducts" element={<AdminProducts />} />
           </Route>
         </Routes>
       </div>

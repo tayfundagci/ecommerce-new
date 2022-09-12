@@ -1,37 +1,31 @@
 import React from 'react'
 import CardHeader from 'react-bootstrap/esm/CardHeader';
 import { useAuth } from '../contexts/AuthContext'
-import { useNavigate } from "react-router-dom"
 
 function Profile() {
-    let navigate = useNavigate();
-    const { user, logout } = useAuth();
-
-    const handleLogout = async () => {
-        logout();
-        navigate('/');
-    }
+    const { user } = useAuth();
 
     return (
-        <>
-            <h3 className='text-center mb-4'>Profile</h3>
+        <div className='row'>
+            <div className="col-lg-6">
+                <h3 className='text-right'>Profile <span>({user.role})</span></h3>
+            </div>
+            <div className="col-lg-6">
+                <div className="text-left" >
+                    <div>
+                        {user && (
+                            <>
+                                <h3>{user.email}</h3>
+                            </>
+                        )}
 
-            <div className="m-auto text-center " >
-                <div>
-                    {user && (
-                        <>
-                            <h6 className="card-subtitle">{user.email}</h6>
-                            <p className="card-text text-muted">{user.role}</p>
-                        </>
-                    )}
-
-                    {!user && (
-                        <h5>No user</h5>
-                    )}
-                    <button className='btn btn-primary' onClick={handleLogout}>Logout</button>
+                        {!user && (
+                            <h5>No user</h5>
+                        )}
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

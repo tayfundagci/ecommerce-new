@@ -1,8 +1,12 @@
 import React from 'react'
+import AdminNavbar from '../components/AdminNavbar'
 
 function AdminOrders() {
     return (
-        <div>AdminOrders</div>
+        <div>
+            <AdminNavbar />
+            <div className="h5">Admin Orders</div>
+        </div>
     )
 }
 

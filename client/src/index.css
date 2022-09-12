@@ -46,6 +46,16 @@ nav {
   transform: scale(1.0125);
 }
 
+#admin-nav ul li {
+  list-style-type: none;
+}
+
+#admin-nav ul li a {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
+
 form {
   border: 2px solid white;
   border-radius: 10px;

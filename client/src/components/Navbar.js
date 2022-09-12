@@ -1,12 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { useBasket } from '../contexts/BasketContext';
 
 function Navbar() {
 
-    const { loggedIn, user } = useAuth();
+    const { loggedIn, user, logout } = useAuth();
     const { items } = useBasket();
+
+    let navigate = useNavigate();
+
+    const handleLogout = async () => {
+        logout();
+        navigate('/');
+    }
 
     return (
 
@@ -42,6 +49,10 @@ function Navbar() {
                                 )}
                                 <li className="nav-item">
                                     <Link className='nav-link' to="/profile"><button className='btn btn-primary btnnavs'>Profile</button></Link>
+                                </li>
+
+                                <li className='nav-item'>
+                                    <button className='btn btn-warning btnnavs' onClick={handleLogout}>Logout</button>
                                 </li>
                             </>
                         )}

@@ -4,9 +4,13 @@ import { useAuth } from '../contexts/AuthContext'
 function ProtectedRouteAdmin({ admin }) {
     const { user } = useAuth();
 
-    return (
-        admin && user.role !== 'admin' ? <Outlet /> : <Navigate to="/" />
-    )
+    if (admin && user === null) {
+        return <Navigate to="/" />
+    } else if (admin && user.role === 'user') {
+        return <Navigate to="/" />
+    } else if (admin && user.role === 'admin') {
+        return <Outlet />
+    }
 }
 
 export default ProtectedRouteAdmin
