@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik';
 
 import validationSchema from '../loginValidations';
@@ -9,8 +9,13 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import { useNavigate } from "react-router-dom";
 
+import DatePicker from "react-datepicker";
+import moment from "moment"
+
 
 function SignIn() {
+
+    const map = `<iframe title="test" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6251.095167014697!2d27.201078999999996!3d38.428819000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b962ec6e7464ed%3A0x404755c1f9398dba!2zS2_Fn3VrYXZhaywgMzUwODAgQm9ybm92YS_EsHptaXI!5e0!3m2!1str!2str!4v1664951311530!5m2!1str!2str"  width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
 
     const { login } = useAuth();
     let navigate = useNavigate();
@@ -47,6 +52,13 @@ function SignIn() {
     })
 
 
+
+
+    const [dateRange, setDateRange] = useState([null, null]);
+    const [startDate, endDate] = dateRange;
+    console.log(dateRange);
+
+
     return (
         <div className='mt-5'>
             {formik.errors.general && (
@@ -67,7 +79,16 @@ function SignIn() {
                     <button type="submit" className="btn btn-primary" >Sign In</button>
                 </div>
             </form >
-        </div >
+
+            <DatePicker
+                selectsRange={true}
+                startDate={startDate}
+                endDate={endDate}
+                onChange={(update) => {
+                    setDateRange(update);
+                }}
+                withPortal
+            />        </div >
     )
 }
 

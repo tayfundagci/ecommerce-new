@@ -1,5 +1,6 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 @import 'react-toastify/dist/ReactToastify.css';
+@import "react-datepicker/dist/react-datepicker.css";
 
 
 body {

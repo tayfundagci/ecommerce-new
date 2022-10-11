@@ -20,8 +20,7 @@ function Products() {
     return (
         <React.Fragment>
             <div className='row justify-content-center'>
-                protected routes
-                {/* {
+                {
                     data.pages.map((group, i) => (
                         <React.Fragment key={i}>
                             {
@@ -31,14 +30,15 @@ function Products() {
                             }
                         </React.Fragment>
                     ))
-                } */}
+                }
             </div>
 
-            {/* <div className='row justify-content-center m-5'>
+            <div className='row justify-content-center m-5'>
                 <button className='btn btn-primary' onClick={() => fetchNextPage()} disabled={!hasNextPage || isFetchingNextPage} >
                     {isFetchingNextPage ? 'Loading more...' : hasNextPage ? 'Load More' : 'Nothing more to load'}
                 </button>
-            </div> */}
+            </div>
+
         </React.Fragment>
     )
 }
